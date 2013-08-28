@@ -34,7 +34,9 @@ try {
     pre_print( $message, "My Message" );
 
     // Send message.
-    //$serviceBusRestProxy->sendTopicMessage("mytopic", $message);
+    $serviceBusRestProxy->sendTopicMessage("olrd-picsys", $message);
+
+    pre_print( true, "Message Sent" );
 }
 catch(ServiceException $e){
     // Handle exception based on error codes and messages.
