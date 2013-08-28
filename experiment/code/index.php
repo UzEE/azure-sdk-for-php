@@ -27,9 +27,20 @@ $serviceBusRestProxy = ServicesBuilder::getInstance()->createServiceBusService($
 pre_print( $serviceBusRestProxy, "Service Bus Proxy" );
 
 try {
+
+	$messageData = array(
+
+		"pictureId" => 156100,
+		"entity" => "user_profile",
+		"originalImage" => "fe2045967e99e93b5ee5dbc5653f1e26.jpg",
+		"countainerName" => "1f9f0c14199de466e5c1b7e6081d4047",
+		"sourceUrl" => "http://api.olaround.me/v2/users/10743/picture",
+		"galleryId" => 10741
+	);
+
     // Create message.
     $message = new BrokeredMessage();
-    $message->setBody("my message");
+    $message->setBody( json_encode( $messageData ) );
 
     pre_print( $message, "My Message" );
 
